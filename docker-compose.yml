@@ -16,7 +16,7 @@ services:
     volumes:
       - ./dynamic.yml:/etc/traefik/dynamic.yml:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      # Monta certificados locales (coloca tus .crt y .key en ./certs/...)
+      # Local certificates mounted into the paths referenced by dynamic.yml
       - ./certs/cashmsystem:/certs/cashmsystem:ro
       - ./certs/fundraiser:/certs/fundraiser:ro
     networks:
