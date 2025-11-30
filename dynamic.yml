@@ -44,16 +44,20 @@ http:
 
   routers:
     http-catchall:
-      rule: "HostRegexp(`{any:.+}`)"
-      entryPoints: [ "web" ]
-      middlewares: [ "redirect-https" ]
+      rule: 'HostRegexp("{any:.+}")'
+      entryPoints:
+        - web
+      middlewares:
+        - redirect-https
       service: noop
 
     traefik-dashboard:
-      entryPoints: [ "websecure" ]
-      rule: Host(`proxy.tu-dominio.com`)
+      entryPoints:
+        - websecure
+      rule: 'Host("proxy.tu-dominio.com")'  # cámbialo por tu dominio real
       service: api@internal
-      middlewares: [ "default-sec-headers" ]
+      middlewares:
+        - default-sec-headers
       tls: {}
 
   services:
