@@ -54,7 +54,7 @@ http:
     traefik-dashboard:
       entryPoints:
         - websecure
-      rule: 'Host("proxy.tu-dominio.com")'  # cámbialo por tu dominio real
+      rule: 'Host("proxy.tu-dominio.com")'  # cambia por tu dominio real del dashboard
       service: api@internal
       middlewares:
         - default-sec-headers
@@ -71,8 +71,6 @@ tls:
     default:
       minVersion: VersionTLS12
 
-  certificates:
-    - certFile: /certs/cashmsystem/cashmsystem.com.ar.crt
-      keyFile: /certs/cashmsystem/cashmsystem.com.ar.key
-    - certFile: /certs/fundraiser/fundraiser.com.ar.crt
-      keyFile: /certs/fundraiser/fundraiser.com.ar.key
+  # IMPORTANTE:
+  # Por ahora NO definimos 'certificates:' para evitar el error de PEM.
+  # Después lo volvemos a agregar cuando arreglemos los archivos.
