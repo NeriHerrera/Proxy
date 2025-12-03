@@ -70,7 +70,6 @@ tls:
   options:
     default:
       minVersion: VersionTLS12
-
-  # IMPORTANTE:
-  # Por ahora NO definimos 'certificates:' para evitar el error de PEM.
-  # Después lo volvemos a agregar cuando arreglemos los archivos.
+  certificates:
+    - certFile: /etc/ssl/fundraiser/fundraiser.com.ar.crt
+      keyFile: /etc/ssl/fundraiser/fundraiser.com.ar.key
