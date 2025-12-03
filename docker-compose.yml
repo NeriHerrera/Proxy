@@ -19,6 +19,7 @@ services:
       - ./certs/cashmsystem:/certs/cashmsystem:ro
       - ./certs/fundraiser:/certs/fundraiser:ro
       - /etc/ssl/fundraiser:/etc/ssl/fundraiser:ro
+      - /etc/ssl/cashmsystem:/etc/ssl/cashmsystem:ro
     networks:
       - traefik
     restart: unless-stopped

@@ -73,3 +73,5 @@ tls:
   certificates:
     - certFile: /etc/ssl/fundraiser/fundraiser.com.ar.crt
       keyFile: /etc/ssl/fundraiser/fundraiser.com.ar.key
+    - certFile: /etc/ssl/cashmsystem/cashmsystem.com.ar.crt
+      keyFile: /etc/ssl/cashmsystem/cashmsystem.com.ar.key
