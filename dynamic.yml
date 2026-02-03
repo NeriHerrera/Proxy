@@ -22,8 +22,8 @@ http:
         accessControlAllowOriginList:
           - "https://cashmsystem.com.ar"
           - "https://www.cashmsystem.com.ar"
-          - "https://fundraiser.com.ar"
-          - "https://www.fundraiser.com.ar"
+          - "https://cleversell.com.ar"
+          - "https://www.cleversell.com.ar"
         accessControlAllowMethods:
           - "GET"
           - "POST"
@@ -71,7 +71,7 @@ tls:
     default:
       minVersion: VersionTLS12
   certificates:
-    - certFile: /etc/ssl/fundraiser/fundraiser.com.ar.crt
-      keyFile: /etc/ssl/fundraiser/fundraiser.com.ar.key
+    - certFile: /etc/ssl/cleversell/cleversell.com.ar.crt
+      keyFile: /etc/ssl/cleversell/cleversell.com.ar.key
     - certFile: /etc/ssl/cashmsystem/cashmsystem.com.ar.crt
       keyFile: /etc/ssl/cashmsystem/cashmsystem.com.ar.key

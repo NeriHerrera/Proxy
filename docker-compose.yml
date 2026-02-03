@@ -17,8 +17,8 @@ services:
       - ./dynamic.yml:/etc/traefik/dynamic.yml:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./certs/cashmsystem:/certs/cashmsystem:ro
-      - ./certs/fundraiser:/certs/fundraiser:ro
-      - /etc/ssl/fundraiser:/etc/ssl/fundraiser:ro
+      - ./certs/cleversell:/certs/cleversell:ro
+      - /etc/ssl/cleversell:/etc/ssl/cleversell:ro
       - /etc/ssl/cashmsystem:/etc/ssl/cashmsystem:ro
     networks:
       - traefik
