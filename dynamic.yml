@@ -24,6 +24,8 @@ http:
           - "https://www.cashmsystem.com.ar"
           - "https://cleversell.com.ar"
           - "https://www.cleversell.com.ar"
+          - "https://kliva.com.ar"
+          - "https://www.kliva.com.ar"
         accessControlAllowMethods:
           - "GET"
           - "POST"
@@ -60,11 +62,26 @@ http:
         - default-sec-headers
       tls: {}
 
+    kliva:
+      entryPoints:
+        - websecure
+      rule: 'Host("kliva.com.ar") || Host("www.kliva.com.ar")'
+      service: kliva
+      middlewares:
+        - default-sec-headers
+        - gzip-compress
+      tls: {}
+
   services:
     noop:
       loadBalancer:
         servers:
           - url: "http://127.0.0.1"
+
+    kliva:
+      loadBalancer:
+        servers:
+          - url: "http://klivaweb:8010"
 
 tls:
   options:
@@ -75,3 +92,5 @@ tls:
       keyFile: /etc/ssl/cleversell/cleversell.com.ar.key
     - certFile: /etc/ssl/cashmsystem/cashmsystem.com.ar.crt
       keyFile: /etc/ssl/cashmsystem/cashmsystem.com.ar.key
+    - certFile: /etc/ssl/kliva/kliva.com.ar.crt
+      keyFile: /etc/ssl/kliva/kliva.com.ar.key

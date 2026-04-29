@@ -20,6 +20,7 @@ services:
       - ./certs/cleversell:/certs/cleversell:ro
       - /etc/ssl/cleversell:/etc/ssl/cleversell:ro
       - /etc/ssl/cashmsystem:/etc/ssl/cashmsystem:ro
+      - /etc/ssl/kliva:/etc/ssl/kliva:ro
     networks:
       - traefik
     restart: unless-stopped
