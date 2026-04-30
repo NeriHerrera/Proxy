@@ -45,14 +45,6 @@ http:
         accessControlMaxAge: 86400
 
   routers:
-    http-catchall:
-      rule: 'HostRegexp("{any:.+}")'
-      entryPoints:
-        - web
-      middlewares:
-        - redirect-https
-      service: noop
-
     traefik-dashboard:
       entryPoints:
         - websecure
